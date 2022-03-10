@@ -1,5 +1,5 @@
 {
-  "name": "state-of-webassembly-slides",
+  "name": "state-machines-with-x-state",
   "version": "0.0.1",
   "description": "",
   "private": true,
@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "build:slides": "vite build"
   },
-  "author": "Mario Kaufmann",
+  "author": "Patrick Walther & Jonas Mattes",
   "license": "ISC",
   "devDependencies": {
     "vite": "2.8.5"
