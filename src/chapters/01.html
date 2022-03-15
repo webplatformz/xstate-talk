@@ -2,6 +2,9 @@
     <h1>Let's build a State Machine</h1>
 </section>
 <section>
+    <img src="img/game_night.jpeg" width="80%">
+</section>
+<section>
     <section>
         <h2>From Visualization</h2>
         <p>
@@ -11,10 +14,36 @@
         </p>
     </section>
     <section>
+        <h2>Options<br><small>actions</small></h2>
+        <pre><code class="language-typescript" data-trim contenteditable data-noescape>
+export const options = {
+    actions: {
+        updateAnswer: assign((ctx: AppMachineContext, { type }: AppMachineEvent) => {
+            return { questions: [] };
+        },
+    },
+};
+        </code></pre>
+    </section>
+    <section>
+        <h2>Options<br><small>guards</small></h2>
+        <pre><code class="language-typescript" data-trim contenteditable data-noescape>
+export const options = {
+    guards: {
+        allQuestionsAnswered: (ctx: AppMachineContext) =>
+            ctx.questions!.every((question) => question.correct !== undefined),
+    },
+};
+        </code></pre>
+    </section>
+    <section>
         <h2>Back to Visualization from Code</h2>
         <p>
-            <a href="https://stately.ai/viz/97ca81d5-6c9b-4942-a4ff-616bf4c159b2" target="_blank">Stately</a>
+            <a href="https://stately.ai/viz" target="_blank">Stately Visualizer</a>
         </p>
+        <aside class="notes">
+            <a href="https://stately.ai/viz/97ca81d5-6c9b-4942-a4ff-616bf4c159b2" target="_blank">Stately Viz</a>
+        </aside>
     </section>
 </section>
 <section>
