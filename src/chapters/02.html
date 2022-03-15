@@ -1,3 +1,52 @@
-<section class="deck-slide">
-    <h1>Debug it!</h1>
+<section>
+    <section class="deck-slide">
+        <h1>Debug it!</h1>
+    </section>
+    <section>
+        <h2>Setup Visualization</h2>
+        <section>
+            <pre class="fragment fade-in">
+                <code class="language-plaintext"> npm install @xstate/inspect</code>
+            </pre>
+            <pre class="fragment fade-in">
+                <code data-trim data-line-numbers="1"><script type="text/template">
+ inspect({ iframe: false });
+
+ export const machine = createMachine<...>({
+
+                </script>
+                </code>
+            </pre>
+
+            <pre class="fragment fade-in">
+                <code class="language-typescript"> const [state, send] = useMachine(machine, { devTools: true })</code>
+            </pre>
+
+            <aside class="notes">
+                <i>branch debug/</i>
+                <ul>
+                    <li>Install package</li>
+                    <li>call 'inspect' before machine initialization</li>
+                    <li>allow machine to be debugged when hooking in</li>
+                </ul>
+            </aside>
+        </section>
+    </section>
+    <section>
+        <h2>It's playtime 🥳</h2>
+        <p>
+            <a href="http://localhost:3000/" target="_blank">
+                <img src="img/inspect.png" width="80%">
+            </a>
+        </p>
+
+        <aside class="notes">
+            <ul>
+                <li>Visualization</li>
+                <li>Side menu: State / Events / Sequence</li>
+                <li>Block request for failure</li>
+            </ul>
+        </aside>
+    </section>
+
 </section>
