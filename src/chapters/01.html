@@ -58,7 +58,9 @@ expect(quizService.state.context).toEqual({
         <pre><code class="language-typescript" data-trim contenteditable data-noescape>
 it('should transition to results when all questions answered', () => {
     const result = machine
-        .withConfig({ guards: { allQuestionsAnswered: () => true } })
+        .withConfig({
+            guards: { allQuestionsAnswered: () => true },
+        })
         .transition('quiz', 'ANSWER_FALSE');
 
     expect(result.value).toEqual('results');
