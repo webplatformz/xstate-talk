@@ -4,9 +4,9 @@
   "description": "",
   "private": true,
   "scripts": {
-    "dev:slides": "vite --port 3001",
+    "dev:slides": "vite --port 3001 --base /xstate-talk/",
     "preview": "vite preview",
-    "build:slides": "vite build"
+    "build:slides": "vite build --base /xstate-talk/ && node copyBuild.mjs"
   },
   "author": "Mario Kaufmann",
   "license": "ISC",
@@ -14,6 +14,7 @@
     "vite": "2.8.5"
   },
   "dependencies": {
+    "cpy" : "9.0.1",
     "highlight.js": "11.4.0",
     "marked": "4.0.12",
     "reveal.js": "4.3.0"
