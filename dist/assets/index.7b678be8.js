@@ -1,4 +1,4 @@
-import{$ as h,R as m,a as g,b as f}from"./vendor.89915203.js";const y=function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const i of n.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&o(i)}).observe(document,{childList:!0,subtree:!0});function s(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerpolicy&&(n.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?n.credentials="include":e.crossorigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(e){if(e.ep)return;e.ep=!0;const n=s(e);fetch(e.href,n)}};y();function r(){document.querySelector(".toc").classList.remove("toc-hidden")}function d(){document.querySelector(".toc").classList.add("toc-hidden")}var b=`<header>
+import{$ as h,R as m,a as g,b as f}from"./vendor.89915203.js";const y=function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const s of n.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function i(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerpolicy&&(n.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?n.credentials="include":e.crossorigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(e){if(e.ep)return;e.ep=!0;const n=i(e);fetch(e.href,n)}};y();function r(){document.querySelector(".toc").classList.remove("toc-hidden")}function d(){document.querySelector(".toc").classList.add("toc-hidden")}var b=`<header>
     <h1>Simple and useful State Machines with XState</h1>
     <h2>
         <span class="nowrap">Jonas Mattes & Patrick Walther</span>
@@ -322,4 +322,24 @@ failure: {
     </pre>
     </a>
 </section>
-`;function q(){const t=new h(document.querySelector(".reveal"),{history:!0,plugins:[m,g,f]});return t.initialize().then(()=>(t.getPlugin("highlight").hljs.highlightAll(),t))}const w=[v,S,x];function k(t){document.querySelector(".toc").innerHTML=`<div>${t}</div>`}function z(t){const a=document.querySelectorAll(".toc section"),s=document.querySelectorAll(".reveal .slides > section.deck-slide"),o=document.querySelectorAll(".reveal .slides > section");a.forEach((e,n)=>{const i=s[n];if(!s){console.error(`Could not find deck slide for chapter ${n+1}`);return}o.forEach((p,u)=>{i===p&&e.addEventListener("click",()=>{d(),t.slide(u,0,0)})})})}const M=w.join("");document.querySelector(".slides-container").innerHTML=`<div class="reveal"><div class="slides">${M}</div></div>`;k(b);const[l,c]=location.hash.split("/").slice(1);(async()=>{const t=await q();l&&(t.slide(l,c!=null?c:0),d()),z(t)})();function T(t){document.querySelector("head title").textContent=t}document.querySelector(".home").addEventListener("click",()=>{r()});window.location.href.endsWith("/")&&r();T("XState");
+`,w=`<section class="deck-slide">
+    <h1>Further Topics</h1>
+    <aside class="notes">
+        Not covered in this presentation
+    </aside>
+</section>
+<section>
+    <h2>Nested State Machines</h2>
+    <ul>
+        <li class="fragment fade-in">Powerful but complex</li>
+        <li class="fragment fade-in">Allows parallel states</li>
+        <li class="fragment fade-in">Allows history states</li>
+        <li class="fragment fade-in">May break the visualization and your brain</li>
+    </ul>
+    <aside class="notes">
+        <ul>
+            <li>Nested gets complex very fast but has some advantages</li>
+        </ul>
+    </aside>
+</section>
+`;function q(){const t=new h(document.querySelector(".reveal"),{history:!0,plugins:[m,g,f]});return t.initialize().then(()=>(t.getPlugin("highlight").hljs.highlightAll(),t))}const k=[v,S,x,w];function z(t){document.querySelector(".toc").innerHTML=`<div>${t}</div>`}function M(t){const a=document.querySelectorAll(".toc section"),i=document.querySelectorAll(".reveal .slides > section.deck-slide"),o=document.querySelectorAll(".reveal .slides > section");a.forEach((e,n)=>{const s=i[n];if(!i){console.error(`Could not find deck slide for chapter ${n+1}`);return}o.forEach((u,p)=>{s===u&&e.addEventListener("click",()=>{d(),t.slide(p,0,0)})})})}const T=k.join("");document.querySelector(".slides-container").innerHTML=`<div class="reveal"><div class="slides">${T}</div></div>`;z(b);const[l,c]=location.hash.split("/").slice(1);(async()=>{const t=await q();l&&(t.slide(l,c!=null?c:0),d()),M(t)})();function A(t){document.querySelector("head title").textContent=t}document.querySelector(".home").addEventListener("click",()=>{r()});window.location.href.endsWith("/")&&r();A("XState");

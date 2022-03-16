@@ -1,4 +1,4 @@
-import{$ as h,R as m,a as g,b as f}from"./vendor.89915203.js";const y=function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))c(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const i of n.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&c(i)}).observe(document,{childList:!0,subtree:!0});function a(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerpolicy&&(n.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?n.credentials="include":e.crossorigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function c(e){if(e.ep)return;e.ep=!0;const n=a(e);fetch(e.href,n)}};y();function l(){document.querySelector(".toc").classList.remove("toc-hidden")}function d(){document.querySelector(".toc").classList.add("toc-hidden")}var b=`<header>
+import{$ as h,R as m,a as g,b as f}from"./vendor.89915203.js";const y=function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const s of n.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function i(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerpolicy&&(n.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?n.credentials="include":e.crossorigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(e){if(e.ep)return;e.ep=!0;const n=i(e);fetch(e.href,n)}};y();function r(){document.querySelector(".toc").classList.remove("toc-hidden")}function d(){document.querySelector(".toc").classList.add("toc-hidden")}var b=`<header>
     <h1>Simple and useful State Machines with XState</h1>
     <h2>
         <span class="nowrap">Jonas Mattes & Patrick Walther</span>
@@ -198,124 +198,148 @@ export const options = {
     </section>
 </section>
 
-`,S=`<section>
-    <section class="deck-slide">
-        <h1>Debug it!</h1>
-    </section>
+`,S=`<section class="deck-slide">
+    <h1>Let's debug it</h1>
+    <aside class="notes">
+        <ul>
+            <li>Hard to understand code</li>
+            <li>Interactive visualization</li>
+        </ul>
+    </aside>
+</section>
+<section>
+    <h2>Visualization</h2>
     <section>
-        <h2>Setup Visualization</h2>
-        <section>
-            <pre class="fragment fade-in">
-                <code class="language-plaintext"> npm install @xstate/inspect</code>
-            </pre>
-            <pre class="fragment fade-in">
-                <code data-trim data-line-numbers="1"><script type="text/template">
+        <pre class="fragment fade-in">
+            <code class="language-plaintext"> npm install @xstate/inspect</code>
+        </pre>
+        <pre class="fragment fade-in">
+                <code data-trim data-line-numbers="1, 3" class="language-typescript">
+ import { inspect } from "@xstate/inspect";
+
  inspect({ iframe: false });
 
- export const machine = createMachine<...>({
-
-                <\/script>
+ export const machine = createMachine({
                 </code>
             </pre>
 
-            <pre class="fragment fade-in">
+        <pre class="fragment fade-in">
                 <code class="language-typescript"> const [state, send] = useMachine(machine, { devTools: true })</code>
             </pre>
 
-            <aside class="notes">
-                <i>branch debug/</i>
-                <ul>
-                    <li>Install package</li>
-                    <li>call 'inspect' before machine initialization</li>
-                    <li>allow machine to be debugged when hooking in</li>
-                </ul>
-            </aside>
-        </section>
-    </section>
-    <section>
-        <h2>It's playtime \u{1F973}</h2>
-        <p>
-            <a href="http://localhost:3000/" target="_blank">
-                <img src="assets/img/inspect.png" width="80%">
-            </a>
-        </p>
-
         <aside class="notes">
+            <i>branch debug/</i>
             <ul>
-                <li>Visualization</li>
-                <li>Side menu: State / Events / Sequence</li>
-                <li>Block request for failure</li>
+                <li>Pretty easy</li>
+                <li>Install package</li>
+                <li>call 'inspect' before machine initialization</li>
+                <li>allow machine to be debugged when hooking in</li>
             </ul>
         </aside>
     </section>
-
 </section>
-`,x=`<section>
-    <section class="deck-slide">
-        <h1>XState extended</h1>
-        <aside class="notes">
-            <i>switch branch to extended/2</i>
-        </aside>
-    </section>
-    <section>
-        <h2>Actors</h2>
-        <aside class="notes">
-            <i>branch extended/2</i>
-            <ul>
-                <li>a</li>
-                <li>b</li>
-                <li>b</li>
-            </ul>
-        </aside>
+<aside class="notes">
+    How do we know it works as expected?
+</aside>
+<section>
+    <h2><a href="http://localhost:3000/" target="_blank">It's playtime \u{1F973}</a></h2>
 
-        <section class="fragment fade-in">
-            <h3>Let's fetch \u{1F3A3}</h3>
-            <section class="fragment fade-in">
-                <pre class="fragment fade-in">
-                    <code data-trim data-line-numbers="2|3,9" class="language-typescript">
+    <aside class="notes">
+        <ul>
+            <li>Visualization</li>
+            <li>Side / side Click through</li>
+            <li>Side menu: State / Events / Sequence</li>
+            <li>Block request for failure</li>
+        </ul>
+    </aside>
+</section>
+`,x=`<section class="deck-slide">
+    <h1>XState extended</h1>
+    <aside class="notes">
+        <i>switch branch to extended/2</i>
+        <ul>
+            <li>Requests etc.</li>
+        </ul>
+    </aside>
+</section>
+<section>
+    <h2>Promises</h2>
+    <aside class="notes">
+        <i>branch extended/2</i>
+        <ul>
+            <li>fetch some quiz data</li>
+        </ul>
+    </aside>
+
+    <pre class="fragment fade-in">
+        <code data-trim data-line-numbers="2|3,9" class="language-typescript">
 myState: {
   src: () => myFetchPromise(),
   onDone: {
-    target: 'successState',
+    target: 'quiz',
     actions: assign({
-      myContextProp: (_, event) => event.data,
+        questions: (_, event) => event.data,
     }),
   },
   onError: {
-    target: 'failureState',
+    target: 'failure',
   },
 }
-                    </code>
-                </pre>
+        </code>
+    </pre>
 
-                <aside class="notes">
-                    Fetch quiz data
-                    <ul>
-                        <li>We need more states</li>
-                        <li>Updated code in background</li>
-                        <li>No problem in the visualization</li>
-                    </ul>
-                </aside>
-            </section>
-        </section>
-    </section>
+    <aside class="notes">
+        Fetch quiz data
+        <ul>
+            <li>We need more states: Loading, Error</li>
+            <li>Updated code in background</li>
+            <li>No problem in the visualization</li>
+        </ul>
+    </aside>
 
-    <section>
-        <h2>Timers</h2>
-        <section>
-        tesr
-            <pre class="fragment fade-in">
-                <code data-trim class="language-typescript">
-                <script type="text/template">
-failure: {
-    after: {
-        5000: 'loading',
-    }
-},
-            <\/script>
-                </code>
-            </pre>
-        </section>
-    </section>
 </section>
-`;function w(){const t=new h(document.querySelector(".reveal"),{history:!0,plugins:[m,g,f]});return t.initialize().then(()=>(t.getPlugin("highlight").hljs.highlightAll(),t))}const q=[v,S,x];function z(t){document.querySelector(".toc").innerHTML=`<div>${t}</div>`}function M(t){const s=document.querySelectorAll(".toc section"),a=document.querySelectorAll(".reveal .slides > section.deck-slide"),c=document.querySelectorAll(".reveal .slides > section");s.forEach((e,n)=>{const i=a[n];if(!a){console.error(`Could not find deck slide for chapter ${n+1}`);return}c.forEach((p,u)=>{i===p&&e.addEventListener("click",()=>{d(),t.slide(u,0,0)})})})}const k=q.join("");document.querySelector(".slides-container").innerHTML=`<div class="reveal"><div class="slides">${k}</div></div>`;z(b);const[r,o]=location.hash.split("/").slice(1);(async()=>{const t=await w();r&&(t.slide(r,o!=null?o:0),d()),M(t)})();function T(t){document.querySelector("head title").textContent=t}document.querySelector(".home").addEventListener("click",()=>{l()});window.location.href.endsWith("/")&&l();T("XState");
+
+<section>
+    <h2><a href="http://localhost:3000/" target="_blank">Let's fetch \u{1F3A3}</a></h2>
+    <aside class="notes">
+        Let's look only at viz <br>
+        <i>timeout</i>
+
+    </aside>
+</section>
+
+<section>
+    <h2>Timers</h2>
+    <a href="http://localhost:3000/" target="_blank">
+    <pre class="fragment fade-in">
+            <code data-trim data-line-numbers="2-4" class="language-typescript">
+failure: {
+  after: {
+    5000: 'loading',
+  }
+},
+        </code>
+    </pre>
+    </a>
+</section>
+`,w=`<section class="deck-slide">
+    <h1>Further Topics</h1>
+    <aside class="notes">
+        Not covered in this presentation
+    </aside>
+</section>
+<section>
+    <h2>Nested State Machines</h2>
+    <ul>
+        <li class="fragment fade-in">Powerful but complex</li>
+        <li class="fragment fade-in">Allows parallel states</li>
+        <li class="fragment fade-in">Allows history states</li>
+        <li class="fragment fade-in">May break the visualization and your brain</li>
+    </ul>
+    <aside class="notes">
+        <ul>
+            <li>Nested gets complex very fast but has some advantages</li>
+        </ul>
+    </aside>
+</section>
+`;function q(){const t=new h(document.querySelector(".reveal"),{history:!0,plugins:[m,g,f]});return t.initialize().then(()=>(t.getPlugin("highlight").hljs.highlightAll(),t))}const k=[v,S,x,w];function z(t){document.querySelector(".toc").innerHTML=`<div>${t}</div>`}function M(t){const a=document.querySelectorAll(".toc section"),i=document.querySelectorAll(".reveal .slides > section.deck-slide"),o=document.querySelectorAll(".reveal .slides > section");a.forEach((e,n)=>{const s=i[n];if(!i){console.error(`Could not find deck slide for chapter ${n+1}`);return}o.forEach((u,p)=>{s===u&&e.addEventListener("click",()=>{d(),t.slide(p,0,0)})})})}const T=k.join("");document.querySelector(".slides-container").innerHTML=`<div class="reveal"><div class="slides">${T}</div></div>`;z(b);const[l,c]=location.hash.split("/").slice(1);(async()=>{const t=await q();l&&(t.slide(l,c!=null?c:0),d()),M(t)})();function A(t){document.querySelector("head title").textContent=t}document.querySelector(".home").addEventListener("click",()=>{r()});window.location.href.endsWith("/")&&r();A("XState");
