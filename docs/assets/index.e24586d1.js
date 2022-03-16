@@ -272,7 +272,7 @@ export const options = {
     </aside>
 
     <pre class="fragment fade-in">
-        <code data-trim data-line-numbers="2|3,9" class="language-typescript">
+        <code data-trim data-line-numbers="2|3,9|6" class="language-typescript">
 myState: {
   src: () => myFetchPromise(),
   onDone: {
@@ -339,7 +339,8 @@ failure: {
     <aside class="notes">
         <ul>
             <li>Nested gets complex very fast but has some advantages</li>
+            <li>Patrick shows SBB machine</li>
         </ul>
     </aside>
 </section>
-`;function q(){const t=new h(document.querySelector(".reveal"),{history:!0,plugins:[m,g,f]});return t.initialize().then(()=>(t.getPlugin("highlight").hljs.highlightAll(),t))}const k=[v,S,x,w];function z(t){document.querySelector(".toc").innerHTML=`<div>${t}</div>`}function M(t){const a=document.querySelectorAll(".toc section"),i=document.querySelectorAll(".reveal .slides > section.deck-slide"),o=document.querySelectorAll(".reveal .slides > section");a.forEach((e,n)=>{const s=i[n];if(!i){console.error(`Could not find deck slide for chapter ${n+1}`);return}o.forEach((u,p)=>{s===u&&e.addEventListener("click",()=>{d(),t.slide(p,0,0)})})})}const T=k.join("");document.querySelector(".slides-container").innerHTML=`<div class="reveal"><div class="slides">${T}</div></div>`;z(b);const[l,c]=location.hash.split("/").slice(1);(async()=>{const t=await q();l&&(t.slide(l,c!=null?c:0),d()),M(t)})();function A(t){document.querySelector("head title").textContent=t}document.querySelector(".home").addEventListener("click",()=>{r()});window.location.href.endsWith("/")&&r();A("XState");
+`;function k(){const t=new h(document.querySelector(".reveal"),{history:!0,plugins:[m,g,f]});return t.initialize().then(()=>(t.getPlugin("highlight").hljs.highlightAll(),t))}const q=[v,S,x,w];function z(t){document.querySelector(".toc").innerHTML=`<div>${t}</div>`}function M(t){const a=document.querySelectorAll(".toc section"),i=document.querySelectorAll(".reveal .slides > section.deck-slide"),o=document.querySelectorAll(".reveal .slides > section");a.forEach((e,n)=>{const s=i[n];if(!i){console.error(`Could not find deck slide for chapter ${n+1}`);return}o.forEach((u,p)=>{s===u&&e.addEventListener("click",()=>{d(),t.slide(p,0,0)})})})}const T=q.join("");document.querySelector(".slides-container").innerHTML=`<div class="reveal"><div class="slides">${T}</div></div>`;z(b);const[l,c]=location.hash.split("/").slice(1);(async()=>{const t=await k();l&&(t.slide(l,c!=null?c:0),d()),M(t)})();function A(t){document.querySelector("head title").textContent=t}document.querySelector(".home").addEventListener("click",()=>{r()});window.location.href.endsWith("/")&&r();A("XState");
