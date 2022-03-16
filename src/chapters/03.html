@@ -6,21 +6,14 @@
 </section>
 <section>
     <section>
-        <h2>Actors</h2>
+        <h2>Promises</h2>
         <aside class="notes">
             <i>branch extended/2</i>
-            <ul>
-                <li>a</li>
-                <li>b</li>
-                <li>b</li>
-            </ul>
         </aside>
 
-        <section class="fragment fade-in">
-            <h3>Let's fetch 🎣</h3>
-            <section class="fragment fade-in">
-                <pre class="fragment fade-in">
-                    <code data-trim data-line-numbers="2|3,9" class="language-typescript">
+    <h3 class="fragment fade-in">Let's fetch 🎣</h3>
+    <pre class="fragment fade-in">
+        <code data-trim data-line-numbers="2|3,9" class="language-typescript">
 myState: {
   src: () => myFetchPromise(),
   onDone: {
@@ -33,36 +26,32 @@ myState: {
     target: 'failureState',
   },
 }
-                    </code>
-                </pre>
+        </code>
+    </pre>
 
-                <aside class="notes">
-                    Fetch quiz data
-                    <ul>
-                        <li>We need more states</li>
-                        <li>Updated code in background</li>
-                        <li>No problem in the visualization</li>
-                    </ul>
-                </aside>
-            </section>
-        </section>
-    </section>
+    <aside class="notes">
+        Fetch quiz data
+        <ul>
+            <li>We need more states</li>
+            <li>Updated code in background</li>
+            <li>No problem in the visualization</li>
+        </ul>
+    </aside>
+</section>
 
+<section>
+    <h2>Timers</h2>
     <section>
-        <h2>Timers</h2>
-        <section>
-        tesr
-            <pre class="fragment fade-in">
-                <code data-trim class="language-typescript">
+        <pre class="fragment fade-in">
+                <code data-trim data-line-numbers="2-4" class="language-typescript">
                 <script type="text/template">
 failure: {
-    after: {
-        5000: 'loading',
-    }
+  after: {
+    5000: 'loading',
+  }
 },
             </script>
                 </code>
             </pre>
-        </section>
     </section>
 </section>
