@@ -12,7 +12,7 @@
 }
 
 .reveal .deck-slide.slide-background {
-    background: url("./img/bg.jpg"), center, center;
+    background: url("/xstate-talk/assets/img/bg.jpg"), center, center;
     background-size: cover;
 }
 
@@ -57,7 +57,7 @@
     min-height: 100px;
     max-width: 200px;
     max-height: 200px;
-    background: url("./img/zuehlke_logo.jpg");
+    background: url("/xstate-talk/assets/img/zuehlke_logo.jpg");
     background-size: contain;
 }
 
@@ -236,7 +236,7 @@
 
 .reveal .slides section .tip::before {
     content: ' ';
-    background: url(./img/light-bulb.svg) no-repeat;
+    background: url(/xstate-talk/assets/img/light-bulb.svg) no-repeat;
     background-size: contain;
     display: block;
     min-width: 50px;
