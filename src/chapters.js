@@ -2,6 +2,7 @@ import toc from "./chapters/toc.html?raw";
 import chapter1 from "./chapters/01.html?raw";
 import chapter2 from "./chapters/02.html?raw";
 import chapter3 from "./chapters/03.html?raw";
+import chapter4 from "./chapters/04.html?raw";
 import {setupDeck} from "./deck";
 import {hideToc} from "./toc";
 
@@ -10,12 +11,14 @@ const chapterSources = [
     "./chapters/01.html?raw",
     "./chapters/02.html?raw",
     "./chapters/03.html?raw",
+    "./chapters/04.html?raw",
 ];
 
 const chapters = [
     chapter1,
     chapter2,
     chapter3,
+    chapter4,
 ];
 
 function insertToc(toc) {
