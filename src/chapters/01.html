@@ -53,47 +53,49 @@ export const options = {
     <section>
         <h2>Test whole integration<br><small>arrange</small></h2>
         <pre><code class="language-typescript" data-trim contenteditable data-noescape>
-it('should transition properly through machine', () => {
-  const quizService = interpret(machine);
-  quizService.start();
+            import { machine } from "./machine";
+            import { interpret } from "xstate";
 
-  ...
-});
+            it('should transition properly through machine', () => {
+                const quizService = interpret(machine);
+                quizService.start();
+                ...
+            });
         </code></pre>
     </section>
     <section>
         <h2>Test whole integration<br><small>act</small></h2>
         <pre><code class="language-typescript" data-trim contenteditable data-noescape>
-quizService.send('START_QUIZ');
-questions.forEach(() => {
-  quizService.send('ANSWER_TRUE');
-});
+            quizService.send('START_QUIZ');
+            questions.forEach(() => {
+                quizService.send('ANSWER_TRUE');
+            });
         </code></pre>
     </section>
     <section>
         <h2>Test whole integration<br><small>assert</small></h2>
         <pre><code class="language-typescript" data-trim contenteditable data-noescape>
-expect(quizService.state.value).toEqual('results')
-expect(quizService.state.context).toEqual({
-    currentQuestion: 3,
-    currentQuestionDisplay: 4,
-    totalCorrectAnswers: 1,
-    questions: expect.any(Array),
-});
+            expect(quizService.state.value).toEqual('results')
+            expect(quizService.state.context).toEqual({
+                currentQuestion: 3,
+                currentQuestionDisplay: 4,
+                totalCorrectAnswers: 1,
+                questions: expect.any(Array),
+            });
         </code></pre>
     </section>
     <section>
         <h2>Mock parts</h2>
         <pre><code class="language-typescript" data-trim contenteditable data-noescape>
-it('should transition to results when all questions answered', () => {
-    const result = machine
-        .withConfig({
-            guards: { allQuestionsAnswered: () => true },
-        })
-        .transition('quiz', 'ANSWER_FALSE');
+            it('should transition to results when all questions answered', () => {
+                const result = machine
+                    .withConfig({
+                        guards: { allQuestionsAnswered: () => true },
+                    })
+                    .transition('quiz', 'ANSWER_FALSE');
 
-    expect(result.value).toEqual('results');
-});
+                expect(result.value).toEqual('results');
+            });
         </code></pre>
     </section>
 </section>
