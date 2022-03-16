@@ -98,3 +98,74 @@ it('should transition to results when all questions answered', () => {
     </section>
 </section>
 
+<section>
+    <section>
+        <h2>TypeScript</h2>
+    </section>
+    <section>
+        <h2>New way: typegen<br><small>package.json</small></h2>
+        <pre><code class="language-json" data-trim contenteditable data-noescape>
+            {
+                scripts: {
+                    "typegen": "xstate typegen \"src/**/*.ts?(x)\"",
+                    "typegen:watch": "xstate typegen \"src/**/*.ts?(x)\" --watch"
+                }
+            }
+        </code></pre>
+    </section>
+    <section>
+        <h2>typegen<br><small>machine.ts</small></h2>
+        <pre><code class="language-typescript" data-trim contenteditable data-noescape>
+            {
+                schema: {
+                  context: {} as QuizContext,
+                  events: {} as QuizEvents,
+                },
+                tsTypes: {} as import("./machine.typegen").Typegen0,
+                ...
+            }
+        </code></pre>
+    </section>
+    <section>
+        <h2>Old way: TypeStates<br><small>machine.ts</small></h2>
+        <pre><code class="language-typescript" data-trim contenteditable data-noescape data-line-numbers="1">
+            createMachine&lt;AppMachineContext, AppMachineEvent, MachineTypeState&gt;({
+                id: 'Machine',
+                initial: 'welcome',
+                ...
+            });
+        </code></pre>
+    </section>
+    <section>
+        <h2>Old way: TypeStates<br><small>types.ts</small></h2>
+        <pre><code class="language-typescript" data-trim contenteditable data-noescape data-line-numbers="1|3-6|8-11|1-11">
+            export type MachineTypeState = MachineDefaultState | MachineQuizState;
+
+            export interface MachineDefaultState {
+                value: 'welcome' | 'loading' | 'failure';
+                context: AppMachineContext;
+            }
+
+            export interface MachineQuizState {
+                value: 'quiz' | 'results';
+                context: AppMachineQuizContext;
+            }
+        </code></pre>
+    </section>
+    <section>
+        <h2>Old way: TypeStates<br><small>types.ts</small></h2>
+        <pre><code class="language-typescript" data-trim contenteditable data-noescape>
+            export interface AppMachineContext {
+                currentQuestion: number;
+                currentQuestionDisplay: number;
+                questions?: Question[];
+                totalCorrectAnswers: number;
+            }
+
+            export interface AppMachineQuizContext extends AppMachineContext {
+                questions: Question[];
+            }
+        </code></pre>
+    </section>
+</section>
+
