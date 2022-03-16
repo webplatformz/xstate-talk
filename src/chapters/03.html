@@ -2,28 +2,32 @@
     <h1>XState extended</h1>
     <aside class="notes">
         <i>switch branch to extended/2</i>
+        <ul>
+            <li>Requests etc.</li>
+        </ul>
     </aside>
 </section>
 <section>
-    <section>
-        <h2>Promises</h2>
-        <aside class="notes">
-            <i>branch extended/2</i>
-        </aside>
+    <h2>Promises</h2>
+    <aside class="notes">
+        <i>branch extended/2</i>
+        <ul>
+            <li>fetch some quiz data</li>
+        </ul>
+    </aside>
 
-    <h3 class="fragment fade-in">Let's fetch 🎣</h3>
     <pre class="fragment fade-in">
         <code data-trim data-line-numbers="2|3,9" class="language-typescript">
 myState: {
   src: () => myFetchPromise(),
   onDone: {
-    target: 'successState',
+    target: 'quiz',
     actions: assign({
-      myContextProp: (_, event) => event.data,
+        questions: (_, event) => event.data,
     }),
   },
   onError: {
-    target: 'failureState',
+    target: 'failure',
   },
 }
         </code>
@@ -32,26 +36,34 @@ myState: {
     <aside class="notes">
         Fetch quiz data
         <ul>
-            <li>We need more states</li>
+            <li>We need more states: Loading, Error</li>
             <li>Updated code in background</li>
             <li>No problem in the visualization</li>
         </ul>
+    </aside>
+
+</section>
+
+<section>
+    <h2><a href="http://localhost:3000/" target="_blank">Let's fetch 🎣</a></h2>
+    <aside class="notes">
+        Let's look only at viz <br>
+        <i>timeout</i>
+
     </aside>
 </section>
 
 <section>
     <h2>Timers</h2>
-    <section>
-        <pre class="fragment fade-in">
-                <code data-trim data-line-numbers="2-4" class="language-typescript">
-                <script type="text/template">
+    <a href="http://localhost:3000/" target="_blank">
+    <pre class="fragment fade-in">
+            <code data-trim data-line-numbers="2-4" class="language-typescript">
 failure: {
   after: {
     5000: 'loading',
   }
 },
-            </script>
-                </code>
-            </pre>
-    </section>
+        </code>
+    </pre>
+    </a>
 </section>
