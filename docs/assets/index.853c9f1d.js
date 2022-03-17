@@ -1,4 +1,4 @@
-import{$ as h,R as m,a as g,b as f}from"./vendor.89915203.js";const y=function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const s of n.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function i(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerpolicy&&(n.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?n.credentials="include":e.crossorigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(e){if(e.ep)return;e.ep=!0;const n=i(e);fetch(e.href,n)}};y();function r(){document.querySelector(".toc").classList.remove("toc-hidden")}function d(){document.querySelector(".toc").classList.add("toc-hidden")}var b=`<header>
+import{$ as h,R as m,a as g,b as f}from"./vendor.89915203.js";const y=function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const a of n.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&o(a)}).observe(document,{childList:!0,subtree:!0});function i(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerpolicy&&(n.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?n.credentials="include":e.crossorigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(e){if(e.ep)return;e.ep=!0;const n=i(e);fetch(e.href,n)}};y();function r(){document.querySelector(".toc").classList.remove("toc-hidden")}function d(){document.querySelector(".toc").classList.add("toc-hidden")}var v=`<header>
     <h1>Simple and useful State Machines with XState</h1>
     <h2>
         <span class="nowrap">Jonas Mattes & Patrick Walther</span>
@@ -21,11 +21,17 @@ import{$ as h,R as m,a as g,b as f}from"./vendor.89915203.js";const y=function()
 <section>
         <h2>03 XState extended</h2>
         <ul>
-            <li>Sub State Machines</li>
-            <li>Actors</li>
+            <li>Promises</li>
+            <li>Timers</li>
         </ul>
 </section>
-`,v=`<section class="deck-slide">
+<section>
+        <h2>04 Further topics</h2>
+        <ul>
+            <li>Nested States</li>
+        </ul>
+</section>
+`,b=`<section class="deck-slide">
     <h1>Let's build a State Machine</h1>
 </section>
 <section>
@@ -345,4 +351,4 @@ failure: {
         </ul>
     </aside>
 </section>
-`;function k(){const t=new h(document.querySelector(".reveal"),{history:!0,plugins:[m,g,f]});return t.initialize().then(()=>(t.getPlugin("highlight").hljs.highlightAll(),t))}const q=[v,S,x,w];function z(t){document.querySelector(".toc").innerHTML=`<div>${t}</div>`}function M(t){const a=document.querySelectorAll(".toc section"),i=document.querySelectorAll(".reveal .slides > section.deck-slide"),o=document.querySelectorAll(".reveal .slides > section");a.forEach((e,n)=>{const s=i[n];if(!i){console.error(`Could not find deck slide for chapter ${n+1}`);return}o.forEach((u,p)=>{s===u&&e.addEventListener("click",()=>{d(),t.slide(p,0,0)})})})}const T=q.join("");document.querySelector(".slides-container").innerHTML=`<div class="reveal"><div class="slides">${T}</div></div>`;z(b);const[l,c]=location.hash.split("/").slice(1);(async()=>{const t=await k();l&&(t.slide(l,c!=null?c:0),d()),M(t)})();function A(t){document.querySelector("head title").textContent=t}document.querySelector(".home").addEventListener("click",()=>{r()});window.location.href.endsWith("/")&&r();A("XState");
+`;function k(){const t=new h(document.querySelector(".reveal"),{history:!0,plugins:[m,g,f]});return t.initialize().then(()=>(t.getPlugin("highlight").hljs.highlightAll(),t))}const q=[b,S,x,w];function z(t){document.querySelector(".toc").innerHTML=`<div>${t}</div>`}function M(t){const s=document.querySelectorAll(".toc section"),i=document.querySelectorAll(".reveal .slides > section.deck-slide"),o=document.querySelectorAll(".reveal .slides > section");s.forEach((e,n)=>{const a=i[n];if(!i){console.error(`Could not find deck slide for chapter ${n+1}`);return}o.forEach((u,p)=>{a===u&&e.addEventListener("click",()=>{d(),t.slide(p,0,0)})})})}const T=q.join("");document.querySelector(".slides-container").innerHTML=`<div class="reveal"><div class="slides">${T}</div></div>`;z(v);const[l,c]=location.hash.split("/").slice(1);(async()=>{const t=await k();l&&(t.slide(l,c!=null?c:0),d()),M(t)})();function A(t){document.querySelector("head title").textContent=t}document.querySelector(".home").addEventListener("click",()=>{r()});window.location.href.endsWith("/")&&r();A("XState");
